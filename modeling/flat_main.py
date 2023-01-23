@@ -215,7 +215,7 @@ def flat_main(batch=10,lr=1e-3,head_dim=20,head=8,warmup=0.1,dataset='weibo',dev
         device = torch.device('cpu')
     print(device)
 
-    refresh_data = False
+    refresh_data = True
 
 
     for k,v in args.__dict__.items():

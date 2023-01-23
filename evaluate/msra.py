@@ -20,7 +20,7 @@ writer.write(str(args)+'\n\n')
 writer.flush()
 
 
-inner_metric = flat_main(reinit=0,dataset=data, head_dim=20,head=10,device=device,ck=checkpoint,output_dir=output_dir )
+inner_metric = flat_main(dataset=data, head_dim=20,head=10,device=device,ck=checkpoint,output_dir=output_dir )
 
 
 for k,v in inner_metric['SpanFPreRecMetric'].items():

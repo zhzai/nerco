@@ -497,7 +497,7 @@ class Trainer(object):
             elif hasattr(sampler, 'set_batch_size'):
                 sampler.set_batch_size(batch_size)
 
-        if isinstance(train_data, DataSet):#zae.com:debug:train_data[:5] 90% : len(train_data)*0.9
+        if isinstance(train_data, DataSet):
             self.data_iterator = DataSetIter(
                 dataset=train_data, batch_size=batch_size, num_workers=num_workers, sampler=sampler,
                 drop_last=drop_last)
@@ -573,7 +573,7 @@ class Trainer(object):
         if self.is_ctr and self.finetune:
             # finetun is True: output a finetuned result of ctr_model with 1_epoch_Training
             self.finetuner = Tester_finetune_ctr(model=self.model,
-                                 data=self.train_data,#zae.com[:5]
+                                 data=self.train_data,
                                  metrics=self.metrics,
                                  batch_size=self.batch_size,
                                  device=device,  # 由上面的部分处理device
@@ -581,7 +581,7 @@ class Trainer(object):
                                  use_tqdm=self.test_use_tqdm,args=args,params=params)
         if self.dev_data is not None:
             self.tester = Tester(model=self.model,
-                                 data=self.dev_data,#zae.com[:5]
+                                 data=self.dev_data,
                                  metrics=self.metrics,
                                  batch_size=kwargs.get("dev_batch_size", self.batch_size),
                                  device=None,  # 由上面的部分处理device
@@ -589,7 +589,7 @@ class Trainer(object):
                                  use_tqdm=self.test_use_tqdm)
         if self.test_data is not None:
             self.tester_test = Tester(model=self.model,
-                                      data=self.test_data,#zae.com
+                                      data=self.test_data,
                                       metrics=self.metrics,
                                       batch_size=kwargs.get("dev_batch_size", self.batch_size),
                                       device=None,  # 由上面的部分处理device
@@ -704,7 +704,7 @@ class Trainer(object):
         self.epoch = 0
         start = time.time()
 
-        # zae commit: to save best model
+
         best_epoch = -1
         best_metric = {'f': -1,'loss': 1e10}#'loss': 1e10
         self.best_state_path = None  # output model path
