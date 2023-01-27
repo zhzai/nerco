@@ -1,11 +1,11 @@
 # NerCo: A Contrastive Learning based Two-stage Chinese NER Method  
 
-This repo provides the source code & data of our paper "NerCo: A Contrastive Learning based Two-stage Chinese NER Method  " .
+This repo provides the source codes & data for our paper "NerCo: A Contrastive Learning based Two-stage Chinese NER Method  " .
 
 ### Overview
 
 NerCo is our proposed two-stage learning approach for tackling *Entity Representation Segmentation in Label-semantics*. Unlike traditional sequence labeling methods which lead to the above problem, our approach takes a two-stage NER strategy. In the first stage, we conduct contrastive learning for label-semantics based representations. Then we finetune the learned model in the second stage, equipping it with inner-entity position discrimination for chunk tags and linear mapping to type tags for each token. 
-We conducted our experiment on a NVIDIA A100 80G GPU for training.
+We conducted our experiments on a NVIDIA A100 80G GPU for training.
 ![image-20230123100746577](figures/framework.png)
 
 <p align="center">
