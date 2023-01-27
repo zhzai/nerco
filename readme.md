@@ -5,7 +5,7 @@ This repo provides the source code & data of our paper "NerCo: A Contrastive Lea
 ### Overview
 
 NerCo is our proposed two-stage learning approach for tackling *Entity Representation Segmentation in Label-semantics*. Unlike traditional sequence labeling methods which lead to the above problem, our approach takes a two-stage NER strategy. In the first stage, we conduct contrastive learning for label-semantics based representations. Then we finetune the learned model in the second stage, equipping it with inner-entity position discrimination for chunk tags and linear mapping to type tags for each token. 
-
+We conducted our experiment on a NVIDIA A100 80G GPU for training.
 ![image-20230123100746577](figures/framework.png)
 
 <p align="center">
@@ -30,7 +30,7 @@ cp fastnlp_src/* ~/.conda/envs/nerco/lib/python3.7/site-packages/fastNLP/core/. 
 ```
 
 ## Data Preparation
-1. Download the character embeddings and word embeddings.(Provided by [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md)). Put them into `data/word` subdirectory.
+1. Download the character embeddings and word embeddings(Provided by [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md)). Put them into `data/word` subdirectory.
 
       Character and Bigram embeddings (gigaword_chn.all.a2b.{'uni' or 'bi'}.ite50.vec) : [Google Drive](https://drive.google.com/file/d/1_Zlf0OAZKVdydk7loUpkzD2KPEotUE8u/view?usp=sharing) or [Baidu Pan](https://pan.baidu.com/s/1pLO6T9D)
 
@@ -48,7 +48,7 @@ python preprocess.py
 
 &nbsp;2.&nbsp; Datasets.
 
-Download our [datasets](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed and Ontonotes train split preprocessed, see [Flat github](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details). Put each dataset into `data/datasets/dataName`(e.g. `data/datasets/weibo` for Weibo NER dataset).
+Download our [datasets](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed and Ontonotes train split preprocessed, see [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details). Put each dataset into `data/datasets/dataName`(e.g. `data/datasets/weibo` for Weibo NER dataset).
 
 ## Evaluate
 You can either evaluate our trained checkpoints(download [here](https://drive.google.com/drive/folders/17PD3q4Hl77DKq0PjfQp4gmH2715hWZJF?usp=sharing)) or your models trained from scratch(see next section).
