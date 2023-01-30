@@ -48,14 +48,18 @@ python preprocess.py
 
 &nbsp;2.&nbsp; Datasets.
 
-Download our [datasets](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed and Ontonotes train split preprocessed, see [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details). Put each dataset into `data/datasets/dataName`(e.g. `data/datasets/weibo` for Weibo NER dataset).
+Download our [datasets](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed and Ontonotes train split preprocessed, see [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details). 
+Put each dataset into `data/datasets/dataName`(e.g. `data/datasets/weibo` for Weibo NER dataset).
 
 ## Evaluate
-You can either evaluate our trained checkpoints(download [here](https://drive.google.com/drive/folders/17PD3q4Hl77DKq0PjfQp4gmH2715hWZJF?usp=sharing)) or your models trained from scratch(see next section).
+You can evaluate our trained checkpoints(download [here](https://drive.google.com/drive/folders/17PD3q4Hl77DKq0PjfQp4gmH2715hWZJF?usp=sharing)).
+Put each dataset checkpoint into `checkpoints/dataName` and directly execute the following commands:
 ```bash
 cd evaluate
 python weibo.py #taking weibo dataset for evaluation example
 ```
+
+Or you can train the models from scratch(see next section) and modify the corresponding model path in the `python` scripts for evaluation.
 
 ## Train
 
@@ -64,3 +68,8 @@ cd train
 python ontonotes.py #taking ontonotes for training example
 ```
 
+Model Performance:
+
+|  Datasets | Resume|Weibo| MSRA| Ontonotes|
+| :----:  | :----:  | :----:  |  :----:  |  :----:  |
+|Test F1| 0.968196   | 0.727924  |0.962927|0.836158|
