@@ -30,7 +30,7 @@ stage2_param = {
 ##################### Manual set params #########################
 data='msra'
 device='1'
-fixed_seed=24
+fixed_seed=1080956
 #################################################################
 
 is_ctr=False
