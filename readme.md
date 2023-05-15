@@ -5,7 +5,7 @@ This repo provides the source codes & data for our paper "NerCo: A Contrastive L
 ### Overview
 
 NerCo is our proposed two-stage learning approach for tackling *Entity Representation Segmentation in Label-semantics*. Unlike traditional sequence labeling methods which lead to the above problem, our approach takes a two-stage NER strategy. In the first stage, we conduct contrastive learning for label-semantics based representations. Then we finetune the learned model in the second stage, equipping it with inner-entity position discrimination for chunk tags and linear mapping to type tags for each token. 
-Our codes are modified from the baseline [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/tree/master), so we recommend that you read their codes in advance to better understand the code. And we conducted our experiments on a NVIDIA A100 80G GPU for training.
+Our codes are modified from the baseline [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/tree/master), so we recommend that you read their codes in advance to better understand ours. And we conducted our experiments on a NVIDIA A100 80G GPU for training.
 ![image-20230123100746577](figures/framework.png)
 
 <p align="center">
@@ -48,7 +48,7 @@ python preprocess.py
 
 &nbsp;2.&nbsp; Datasets.
 
-Download the datasets [here](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed). For Ontonotes, you could download the [dataset](https://catalog.ldc.upenn.edu/LDC2011T03) and also preprocess the train split( Due to copyright and permission reasons, we are unable to post our processed Ontonotes dataset). See [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details of preprocessing details of MSRA and Ontonotes.
+Download the datasets [here](https://drive.google.com/drive/folders/1efbRAjqIRe5y1meiNEZdR4EzRmY7tOM0?usp=sharing) (with MSRA train/test splits preprocessed). For Ontonotes, you could download the [dataset](https://catalog.ldc.upenn.edu/LDC2011T03) and also preprocess the train split. (Due to copyright and permission reasons, we are unable to post our processed Ontonotes dataset.) See [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md) for more details of preprocessing MSRA and Ontonotes.
 Put each dataset into `data/datasets/dataName`(e.g. `data/datasets/weibo` for Weibo NER dataset).
 
 ## Evaluate
