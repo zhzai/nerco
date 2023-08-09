@@ -73,3 +73,6 @@ Model Performance:
 |  Datasets | Resume|Weibo| MSRA| Ontonotes|
 | :----:  | :----:  | :----:  |  :----:  |  :----:  |
 |Test F1| 0.968196   | 0.727924  |0.962927|0.836158|
+
+## Acknowledgements
+The codes are based on the codes of [Flat](https://github.com/LeeSureman/Flat-Lattice-Transformer/blob/master/README.md), thanks a lot!
